@@ -15,19 +15,23 @@ function App() {
   const [loading, setLoading] = useState("");
 
   const handleClick = async () => {
-    setLoading(true);
-    try {
-      const response = await openai.createCompletion({
-        model: "text-davinci-003",
-        prompt: prompt,
-        temperature: 0.5,
-        max_tokens: 100,
-      });
-      setResult(response.data.choices[0].text);
-    } catch (error) {
-      console.log(error);
+    if (prompt === "") {
+      alert("Please Enter Questions");
+    } else {
+      setLoading(true);
+      try {
+        const response = await openai.createCompletion({
+          model: "text-davinci-003",
+          prompt: prompt,
+          temperature: 0.5,
+          max_tokens: 100,
+        });
+        setResult(response.data.choices[0].text);
+      } catch (error) {
+        console.log(error);
+      }
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
@@ -71,7 +75,7 @@ function App() {
       </div>
 
       <div className={style.resultContainer}>
-        <p>{loading ? "Please Wait....." : result.length !== 0 ? result : "Result"}</p>
+        <p>{loading ? "Please Wait....." : result.length !== 0 ? result : ""}</p>
       </div>
     </main>
   );
