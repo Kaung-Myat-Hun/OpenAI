@@ -1,0 +1,21 @@
+main {
+  background-color: #007b;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.questionsBox {
+  background-color: transparent !important;
+  font-size: 24px;
+  padding: 20px;
+}
+.questionsBox:focus {
+  outline: none;
+}
+.generateBtn {
+  /* width: 40vw; */
+  padding: 10px 30px;
+  margin: auto;
+}
