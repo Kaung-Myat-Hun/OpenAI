@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
 
-import style from "./App.css";
+import style from "./App.module.css";
 
 function App() {
   // const apiKey = import.meta.env.VITE_APP_OPENAI_API_KEY;
@@ -66,6 +66,7 @@ function App() {
             color: "#000",
             borderRadius: "10px",
             border: "none",
+            // hover: backgroundColor="#7fc"
           }}
           // className={style.generateBtn}
           onClick={handleClick}
@@ -74,17 +75,9 @@ function App() {
         </button>
       </div>
 
-      <p
-        style={{
-          width: "95vw",
-          height: "30vh",
-          padding: "20px",
-          backgroundColor: "#ffffff50",
-          fontWeight: "700",
-          borderRadius: "20px",
-        }}>
-        {loading ? "Wait....." : result.length !== 0 ? result : "Result"}
-      </p>
+      <div className={style.resultContainer}>
+        <p>{loading ? "Please Wait....." : result.length !== 0 ? result : "Result"}</p>
+      </div>
     </main>
   );
 }

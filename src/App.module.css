@@ -19,3 +19,15 @@ main {
   padding: 10px 30px;
   margin: auto;
 }
+.resultContainer::-webkit-scrollbar {
+  width: 1px;
+}
+.resultContainer {
+  width: 90vw;
+  height: 30vh;
+  padding: 20px;
+  background-color: #ffffff50;
+  font-weight: 700;
+  border-radius: 20px;
+  overflow-y: scroll;
+}
