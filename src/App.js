@@ -49,7 +49,7 @@ function App() {
             color: "#fff",
             borderRadius: "10px",
           }}
-          // className={style.questionsBox}
+          className={style.questionsBox}
           cols="80"
           rows="5"
           type="text"
@@ -58,17 +58,12 @@ function App() {
           placeholder="Write Your Question...."></textarea>
         <br />
         <button
-          style={{
-            width: "30vw",
-            padding: "10px 30px",
-            margin: " 20px",
-            backgroundColor: "#7f7f",
-            color: "#000",
-            borderRadius: "10px",
-            border: "none",
-            // hover: backgroundColor="#7fc"
-          }}
-          // className={style.generateBtn}
+          style={
+            {
+              // hover: backgroundColor="#7fc"
+            }
+          }
+          className={style.generateBtn}
           onClick={handleClick}
           disabled={loading || prompt.length === 0}>
           {loading ? "Generating..." : "Generate"}
